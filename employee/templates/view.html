@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<table class="table table-bordered">
+    <tr><th>ename</th><th>age</th><th>address</th><th>email</th></tr>
+    {% for i in Student %}
+    <tr>
+
+        <td>{{i.ename}}</td>
+        <td>{{i.age}}</td>
+        <td>{{i.address}}</td>
+        <td>{{i.email}}</td>
+        <td><a href="{% url 'app2:edit' i.id %}" class="btn btn-danger">edit</a></td>
+        <td><a href="{% url 'app2:delete' i.id %}" class="btn btn-danger">delete</a></td>
+        <td><img src="{{i.cover.url}}" height="100px" width="100px" ></td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}
+

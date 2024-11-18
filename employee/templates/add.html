@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<h2>Add student details</h2>
+<form method="POST" enctype="multipart/form-data">
+  {% csrf_token %}
+
+<div class="mb-3">
+  <label class="form-label">ename</label>
+  <input type="text" class="form-control" name="en" placeholder="ename ">
+</div>
+<div class="mb-3">
+  <label class="form-label">age</label>
+  <input type="number" class="form-control" name="ag" placeholder="age">
+</div>
+<div class="mb-3">
+  <label class="form-label">address</label>
+  <input type="text" class="form-control" name="ad" placeholder="address">
+</div>
+<div class="mb-3">
+  <label class="form-label">email</label>
+  <input type="email" class="form-control" name="e" placeholder="email">
+</div>
+  <div class="mb-3">
+  <label class="form-label">cover</label>
+  <input type="file" class="form-control" name="i" >
+</div>
+  <div class="mp-3">
+    <input type="submit" value="ADD">
+  </div>
+</form>
+{% endblock %}
